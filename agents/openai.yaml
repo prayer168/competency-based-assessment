@@ -1,0 +1,6 @@
+interface:
+  display_name: "108 課綱素養導向評量設計師"
+  short_description: "依教材與十二年國教課綱設計、審查並輸出高品質素養導向評量"
+  default_prompt: "使用 $competency-based-assessment-designer，依教材與十二年國教課綱設計一份可審查、可輸出的素養導向評量。"
+policy:
+  allow_implicit_invocation: true

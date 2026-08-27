@@ -2,7 +2,7 @@
 name: competency-based-assessment-designer
 description: 依教材、年段、評量目的與十二年國教課綱，設計或審查素養導向評量、雙向細目表、學生卷、教師版與命題品質報告。適用於新命題、既有試卷健檢、題庫結構化與評量修訂；一般教學內容撰寫或只需解答單題時不使用。
 metadata:
-  version: "1.2.0"
+  version: "1.3.0"
   release-date: "2026-08-27"
 ---
 
@@ -37,7 +37,7 @@ INPUT → ANALYZE → CURRICULUM MAP → LEARNING OBJECTIVES
 
 ## 漸進式互動
 
-一次只詢問當下真正影響下一步的少量資訊，優先使用選項式互動。依序補齊：年段／年級、科目／領域、單元或教材、教材邊界、評量用途、題數與題型、難度與素養濃度。開始建立評量藍圖或生成題目前，必須先列出完整題型清單讓老師複選，再只針對已選題型逐一詢問各要幾題；取得明確題數或「AI 自動分配題數」授權後才能繼續。若使用者已說「AI 幫我決定」，視為同時授權 AI 選擇題型與分配題數，不再逐項追問。
+一次只詢問當下真正影響下一步的少量資訊，優先使用選項式互動。依序補齊：年段／年級、科目／領域、單元或教材、教材邊界、評量用途、題數與題型、難度與素養濃度。開始建立評量藍圖或生成題目前，必須先以可複選核取方塊列出完整題型清單讓老師勾選，再只針對已選題型逐一詢問各要幾題；取得明確題數或「AI 自動分配題數」授權後才能繼續。若使用者已說「AI 幫我決定」，視為同時授權 AI 選擇題型與分配題數，不再逐項追問。
 
 完整的輸入、教材邊界、預設值與教材分析規則見 [references/intake-and-analysis.md](references/intake-and-analysis.md)。開始新評量、收到教材、圖片或既有試卷時讀取該文件。
 
@@ -71,4 +71,4 @@ INPUT → ANALYZE → CURRICULUM MAP → LEARNING OBJECTIVES
 
 ## 版本管理
 
-目前 Skill 版本為 `1.2.0`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
+目前 Skill 版本為 `1.3.0`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。

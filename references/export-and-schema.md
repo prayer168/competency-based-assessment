@@ -48,7 +48,7 @@
 - 難度分布：只用 `difficulty_reviewed`。
 - 素養層級、題型、圖像題、高層次題比例。
 - 題型題數核對：逐項列出老師指定或 AI 配置的目標題數、最終實際題數與差異。
-- 客觀題答案分布：單選題各答案位置次數、是非題正誤次數；有複選題時另列各位置成為正解的次數與重複組合。
+- 客觀題答案分布：單選題各答案位置次數、是非題正誤次數；有 A7 勾選題時，另列各題正確勾選項目數與漏選／誤選計分概況，不計 A–D 答案位置分布。
 - 品質旗標數量及尚待教師確認事項。
 - 素養評級 A–E 與理由。
 
@@ -78,6 +78,7 @@
   "visual_required": false,
   "visual_role": "",
   "visual_type": "",
+  "visual_asset_reference": null,
   "visual_style": "",
   "visual_prompt": "",
   "visual_alt_text": "",
@@ -85,10 +86,18 @@
   "quality_flag": "",
   "question": "",
   "choices": [],
+  "matching_pairs": [],
+  "checkbox_items": [],
   "correct_answer": "",
   "explanation": ""
 }
 ```
+
+題型專屬資料使用方式：
+
+- A6 連連看：`matching_pairs` 逐組保存左右項目、正確配對及該組分數，確保答案卷、部分給分與題數一致。
+- A7 勾選題：`checkbox_items` 逐項保存候選物件／資料／行動、是否符合題目條件及配分；`correct_answer` 保留完整標準勾選集合，並由評分規準定義漏選與誤選如何給分。
+- B8 看圖回答問題：使用既有 `visual_*` 欄位描述圖像功能及檢查狀態；`visual_asset_reference` 可記錄對應圖檔路徑或來源識別。若 schema 或匯出格式尚未支援新欄位，需保留為可追溯附加欄位，不可把 A6／A7 答案壓成無法驗證的純文字。
 
 建議另保留 `source_material_reference`、`curriculum_verification`、`review_notes`、`rubric`、`points`、`revision_history` 與 `version`，以支援追溯和修訂。不得在 JSON 中把未知值寫成猜測；使用 `null`、空陣列或清楚的待查狀態。
 

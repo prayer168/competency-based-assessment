@@ -2,8 +2,8 @@
 name: competency-based-assessment-designer
 description: 依教材、年段、評量目的與十二年國教課綱，設計或審查素養導向評量、雙向細目表、學生卷、教師版與命題品質報告。適用於新命題、既有試卷健檢、題庫結構化與評量修訂；一般教學內容撰寫或只需解答單題時不使用。
 metadata:
-  version: "1.12.0"
-  release-date: "2026-09-27"
+  version: "2.0.0"
+  release-date: "2026-09-28"
 ---
 
 # 108 課綱素養導向評量設計師
@@ -52,7 +52,7 @@ INPUT → ANALYZE → CURRICULUM MAP → LEARNING OBJECTIVES
 
 正式命題前建立雙向細目表，確認主要學習目標各至少有一題對應。正式試卷預設總分為 100 分，必須依學習重點、作答證據、認知與作答負荷合理配置各題及各大題分數，並精確核對總和。題目需記錄學習目標、課綱依據、Bloom、素養層級、預期難度、審查後難度、迷思概念與品質旗標。客觀題的每個選項都必須與題目相關且具有合理誘答力；完成全卷後檢查選擇題答案位置與是非題正誤分布近似均衡，且無可猜測的排列規律。
 
-單選題（A1）與是非題（A3）不得配置插圖、照片、示意圖、圖像選項或裝飾圖；必要資料改以文字或簡表呈現。連連看／配合題、閱讀題、情境題及其他確實需要視覺證據的題型，才可適量生成可黑白影印的高對比線條圖；圖像必須具有作答功能、不得洩漏答案，並通過內容與列印可讀性檢核。
+單選題（A1）與是非題（A3）不得配置插圖、照片、示意圖、圖像選項或裝飾圖；必要資料改以文字或簡表呈現。A6 連連看及 B8 看圖回答問題須以清楚的視覺作答材料為核心；閱讀題、情境題及其他確實需要視覺證據的題型，才可適量生成可黑白影印的高對比線條圖。圖像必須具有作答功能、不得洩漏答案，並通過內容與列印可讀性檢核。A7 勾選題以清楚方框和文字項目作答，不因勾選符號而加入裝飾圖片。
 
 建立藍圖、命題、干擾選項或評量圖像前，讀取 [references/blueprint-and-generation.md](references/blueprint-and-generation.md)。
 
@@ -78,6 +78,6 @@ INPUT → ANALYZE → CURRICULUM MAP → LEARNING OBJECTIVES
 
 ## 版本管理
 
-目前 Skill 版本為 `1.12.0`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
+目前 Skill 版本為 `2.0.0`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
 
 每次版本號更新都必須在本機驗證通過後，同步提交並推送至本 Skill 已設定的 GitHub `origin`；不得只更新本機版本或宣稱已部署而未確認遠端結果。發布或版本更新時讀取 [references/release-and-deployment.md](references/release-and-deployment.md)。

@@ -2,7 +2,7 @@
 name: competency-based-assessment-designer
 description: 依教材、年段、評量目的與十二年國教課綱，設計或審查素養導向評量、雙向細目表、學生卷、教師版與命題品質報告。適用於新命題、既有試卷健檢、題庫結構化與評量修訂；一般教學內容撰寫或只需解答單題時不使用。
 metadata:
-  version: "2.4.0"
+  version: "2.4.1"
   release-date: "2026-09-28"
 ---
 
@@ -38,7 +38,7 @@ INPUT → ANALYZE → CURRICULUM MAP → LEARNING OBJECTIVES
 
 ## 互動式設定
 
-命題流程的每個設定步驟都應以可操作的按鈕、選單或結構化選擇器引導，讓老師直接點選並送出，不要求反覆輸入提示詞、代碼或「繼續」。題型必須用真正可複選元件；各題型題數使用數字選擇器／按鈕，不退回長串文字欄。依階段少量呈現；詳細工具選擇、計數器批次與相容性規則見 [references/interactive-workflow.md](references/interactive-workflow.md)。
+命題流程的每個設定步驟都應以可操作的按鈕、選單或結構化選擇器引導，讓老師直接點選並送出，不要求反覆輸入提示詞、代碼或「繼續」。題型必須用真正可複選元件；各題型題數使用緊湊下拉選單或加減步進器（每個題型一列），**禁止將每個數字做成直向選項清單**，避免面板過長、不利手機操作。依階段少量呈現；詳細工具選擇、計數器批次與相容性規則見 [references/interactive-workflow.md](references/interactive-workflow.md)。
 
 使用可用的原生互動工具，並確認送出結果會實際回到對話、可讀且包含選取狀態。只保存於網頁但不回傳對話的表單不算完成；不可把 Markdown 勾選清單、不可點的 HTML 假按鈕或只有空白圓點的畫面當互動介面。若沒有可靠的互動元件，先明確告知目前介面限制，只詢問使用者是否要採一次性的文字備援；不可默默切回逐步文字輸入，也不可宣稱已保存／進入下一步。已知資料與已送出的互動狀態應跨步保留，不重問；使用者要求重新開始時才清除對應階段狀態。
 
@@ -84,6 +84,6 @@ INPUT → ANALYZE → CURRICULUM MAP → LEARNING OBJECTIVES
 
 ## 版本管理
 
-目前 Skill 版本為 `2.4.0`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
+目前 Skill 版本為 `2.4.1`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
 
 每次版本號更新都必須在本機驗證通過後，同步提交並推送至本 Skill 已設定的 GitHub `origin`；不得只更新本機版本或宣稱已部署而未確認遠端結果。發布或版本更新時讀取 [references/release-and-deployment.md](references/release-and-deployment.md)。

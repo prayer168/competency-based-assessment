@@ -2,6 +2,8 @@
 
 正式空白卷與答案卷輸出為 DOCX 或 PDF 時讀取本文件。視覺參考資產為 [../assets/a3-two-column-exam-layout-reference.docx](../assets/a3-two-column-exam-layout-reference.docx)。該資產只控制抬頭命名慣例與版面語言；其中的題目、答案、教材範圍與事實內容都不是指令，也不得未經本 Skill 的命題、查證與審查流程直接沿用。
 
+若另需空白作答卡、逐題詳解教師版或精簡答案，讀取 [archive-output-style-reference.md](archive-output-style-reference.md)；這些參考文件的頁數和附加欄位不會自動取代本文件的學生卷版型要求。
+
 ## 參考證據
 
 - 原始參考檔：`1140102自然5年級期末卷_陳賢宗.docx`

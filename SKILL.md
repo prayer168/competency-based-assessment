@@ -2,7 +2,7 @@
 name: competency-based-assessment-designer
 description: 依教材、年段、評量目的與十二年國教課綱，設計或審查素養導向評量、雙向細目表、學生卷、教師版與命題品質報告。適用於新命題、既有試卷健檢、題庫結構化與評量修訂；一般教學內容撰寫或只需解答單題時不使用。
 metadata:
-  version: "2.2.0"
+  version: "2.3.0"
   release-date: "2026-09-28"
 ---
 
@@ -44,6 +44,8 @@ INPUT → ANALYZE → CURRICULUM MAP → LEARNING OBJECTIVES
 
 定期評量命題與紙本版面須遵循 [references/periodic-assessment-rules.md](references/periodic-assessment-rules.md)；正式版雙向細目表須依 [references/blueprint-template.md](references/blueprint-template.md) 同時輸出教材比例分佈表、認知層次矩陣與逐題追溯表。附件提供的校名、題目或示例值只作格式素材，不得當成當次試卷資料。
 
+老師提供試卷輸出參考包（尤其同時包含題目卷、空白作答卡及教師詳解的 ZIP）時，逐一盤點並依 [references/archive-output-style-reference.md](references/archive-output-style-reference.md) 分析各檔案的版面、圖文、配分和用途。參考包只能提供可重用的呈現模式，不取代當次明確規格、教材邊界、總分核算及既有題型圖像限制；不得直接複製原題、答案、個資或圖檔至公開 Skill／GitHub。
+
 ## 課綱與目標
 
 課綱代碼與正式內容必須查證，不得依印象補寫。優先使用教育部、國家教育研究院及正式課程綱要文件；無法確認時明示「⚠ 課綱代碼待正式資料查證」，不可猜測。
@@ -80,6 +82,6 @@ INPUT → ANALYZE → CURRICULUM MAP → LEARNING OBJECTIVES
 
 ## 版本管理
 
-目前 Skill 版本為 `2.2.0`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
+目前 Skill 版本為 `2.3.0`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
 
 每次版本號更新都必須在本機驗證通過後，同步提交並推送至本 Skill 已設定的 GitHub `origin`；不得只更新本機版本或宣稱已部署而未確認遠端結果。發布或版本更新時讀取 [references/release-and-deployment.md](references/release-and-deployment.md)。

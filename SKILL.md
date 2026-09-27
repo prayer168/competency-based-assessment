@@ -2,7 +2,7 @@
 name: competency-based-assessment-designer
 description: 依教材、年段、評量目的與十二年國教課綱，設計或審查素養導向評量、雙向細目表、學生卷、教師版與命題品質報告。適用於新命題、既有試卷健檢、題庫結構化與評量修訂；一般教學內容撰寫或只需解答單題時不使用。
 metadata:
-  version: "2.3.0"
+  version: "2.4.0"
   release-date: "2026-09-28"
 ---
 
@@ -36,9 +36,11 @@ INPUT → ANALYZE → CURRICULUM MAP → LEARNING OBJECTIVES
 
 不要只收到單元名稱就大量出題。使用者若已提供足夠資料，直接進入分析，不重問已知資訊。
 
-## 漸進式互動
+## 互動式設定
 
-一次只詢問當下真正影響下一步的少量資訊，優先使用選項式互動。依序補齊：年段／年級、科目／領域、單元或教材、教材邊界、評量用途、題數與題型、難度與素養濃度。開始建立評量藍圖或生成題目前，必須先以真正可點選、可複選並可送出結果的互動核取方塊列出完整題型清單；Markdown 工作清單只有外觀、不能當作可勾選介面。收到選擇後，再只針對已選題型逐一詢問各要幾題；取得明確題數或「AI 自動分配題數」授權後才能繼續。若使用者已說「AI 幫我決定」，視為同時授權 AI 選擇題型與分配題數，不再逐項追問。
+命題流程的每個設定步驟都應以可操作的按鈕、選單或結構化選擇器引導，讓老師直接點選並送出，不要求反覆輸入提示詞、代碼或「繼續」。題型必須用真正可複選元件；各題型題數使用數字選擇器／按鈕，不退回長串文字欄。依階段少量呈現；詳細工具選擇、計數器批次與相容性規則見 [references/interactive-workflow.md](references/interactive-workflow.md)。
+
+使用可用的原生互動工具，並確認送出結果會實際回到對話、可讀且包含選取狀態。只保存於網頁但不回傳對話的表單不算完成；不可把 Markdown 勾選清單、不可點的 HTML 假按鈕或只有空白圓點的畫面當互動介面。若沒有可靠的互動元件，先明確告知目前介面限制，只詢問使用者是否要採一次性的文字備援；不可默默切回逐步文字輸入，也不可宣稱已保存／進入下一步。已知資料與已送出的互動狀態應跨步保留，不重問；使用者要求重新開始時才清除對應階段狀態。
 
 完整的輸入、教材邊界、預設值、教材分析與 115 學年度課程地圖使用規則見 [references/intake-and-analysis.md](references/intake-and-analysis.md)。開始新評量、收到教材、圖片或既有試卷時讀取該文件。若老師要求納入課本、習作、重點複習或隨堂演練，另讀取 [references/source-material-integration.md](references/source-material-integration.md)。
 
@@ -82,6 +84,6 @@ INPUT → ANALYZE → CURRICULUM MAP → LEARNING OBJECTIVES
 
 ## 版本管理
 
-目前 Skill 版本為 `2.3.0`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
+目前 Skill 版本為 `2.4.0`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
 
 每次版本號更新都必須在本機驗證通過後，同步提交並推送至本 Skill 已設定的 GitHub `origin`；不得只更新本機版本或宣稱已部署而未確認遠端結果。發布或版本更新時讀取 [references/release-and-deployment.md](references/release-and-deployment.md)。

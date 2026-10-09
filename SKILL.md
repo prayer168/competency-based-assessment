@@ -2,7 +2,7 @@
 name: competency-based-assessment-designer
 description: 依教材、年段、評量目的與十二年國教課綱，設計或審查素養導向評量、雙向細目表、學生卷、教師版與命題品質報告。適用於新命題、既有試卷健檢、題庫結構化與評量修訂；一般教學內容撰寫或只需解答單題時不使用。
 metadata:
-  version: "3.1.0"
+  version: "3.2.0"
   release-date: "2026-10-09"
 ---
 
@@ -44,7 +44,7 @@ COURSE SETUP (year/version → grade/term → multi-select units/activities/mate
 
 完整的輸入、教材邊界、預設值、教材分析與 115 學年度課程地圖使用規則見 [references/intake-and-analysis.md](references/intake-and-analysis.md)。開始新評量、收到教材、圖片或既有試卷時讀取該文件。若老師要求納入課本、習作、重點複習或隨堂演練，另讀取 [references/source-material-integration.md](references/source-material-integration.md)。
 
-定期評量命題與紙本版面須遵循 [references/periodic-assessment-rules.md](references/periodic-assessment-rules.md)；正式版雙向細目表須依 [references/blueprint-template.md](references/blueprint-template.md) 同時輸出教材比例分佈表、認知層次矩陣與逐題追溯表。附件提供的校名、題目或示例值只作格式素材，不得當成當次試卷資料。
+定期評量命題與紙本版面須遵循 [references/periodic-assessment-rules.md](references/periodic-assessment-rules.md)；正式版雙向細目表須依 [references/blueprint-template.md](references/blueprint-template.md) 同時輸出教材比例分佈表、認知層次矩陣與逐題追溯表。附件提供的校名、題目或示例值只作格式素材，不得當成當次試卷資料。老師提供題目格式參考時，依 [references/exam-layout-template.md](references/exam-layout-template.md) 擷取題幹、選項、題型大題標題與作答說明的版面慣例；不得沿用其中題目內容。
 
 老師提供試卷輸出參考包（尤其同時包含題目卷、空白作答卡及教師詳解的 ZIP）時，逐一盤點並依 [references/archive-output-style-reference.md](references/archive-output-style-reference.md) 分析各檔案的版面、圖文、配分和用途。參考包只能提供可重用的呈現模式，不取代當次明確規格、教材邊界、總分核算及既有題型圖像限制；不得直接複製原題、答案、個資或圖檔至公開 Skill／GitHub。
 
@@ -57,6 +57,8 @@ COURSE SETUP (year/version → grade/term → multi-select units/activities/mate
 ## 藍圖與命題
 
 正式命題前建立規劃版雙向細目表，並於定稿後依實際題目重算，確認主要學習目標各至少有一題對應。正式試卷預設總分為 100 分，必須依學習重點、作答證據、認知與作答負荷合理配置各題及各大題分數，並精確核對總和。教師明確指定單元／活動配分方式（例如平均分配）時，依指定方式設定教材理想配分，優先於一般按課時與目標權重規劃的原則；先確保每個指定範圍都有有效題目。總分不能整除範圍數時，以整數配分使各範圍差距最小，並在規劃藍圖及定稿細目表列出理想配分、實際配分與差異。不得為湊平均犧牲題目效度；若題型、作答負荷或分數級距造成衝突，先調整題數或小題配分，並清楚呈現無法完全等分之處。題目需記錄學習目標、課綱依據、Bloom、素養層級、預期難度、審查後難度、迷思概念與品質旗標。客觀題的每個選項都必須與題目相關且具有合理誘答力；單選題印出的選項標記一律用圈號 ①②③④，不得用 A、B、C、D；完成全卷後檢查四個圈號所代表的正答位置與是非題正誤分布近似均衡，且無可猜測的排列規律。正式版雙向細目表除逐題追溯外，須包含教材比例分佈與教材內容 × 認知層次的彙總矩陣。
+
+老師提供定期評量題目格式參考時，題幹編排、選項呈現、各題型大題標題及其作答說明依 [references/exam-layout-template.md](references/exam-layout-template.md) 對照附件樣式；只重用可泛化的格式證據，不複製樣本題目、答案或個資。正式評量除空白卷、答案卷、雙向細目表外，必須加交一份 `.xlsx` 出卷統計分析表，逐個獨立計分題目／小題列出大題與局部題號、主要題型、單元、活動及配分，並彙總各題型與各活動分數；依 [references/score-analysis-workbook.md](references/score-analysis-workbook.md) 建立、公式核算並自行驗證總分符合當次設定（預設 100 分）。
 
 單選題（A1）與是非題（A3）不得配置插圖、照片、示意圖、圖像選項或裝飾圖；必要資料改以文字或簡表呈現。A6 連連看及 B8 看圖回答問題須以清楚的視覺作答材料為核心；閱讀題、情境題及其他確實需要視覺證據的題型，才可適量生成符合題意的圖片。需要以生成式 AI 製作試卷圖片時，使用 ChatGPT 的生圖模型，不指定或寫死模型版本，並以當下可用的 ChatGPT 生圖模型生成；圖片必須符合題目內容、具有作答功能、不得洩漏答案，且須通過內容與版面／列印可讀性檢核。A7 勾選題以清楚方框和文字項目作答，不因勾選符號而加入裝飾圖片。
 
@@ -84,6 +86,6 @@ COURSE SETUP (year/version → grade/term → multi-select units/activities/mate
 
 ## 版本管理
 
-目前 Skill 版本為 `3.1.0`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
+目前 Skill 版本為 `3.2.0`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
 
 每次版本號更新都必須在本機驗證通過後，同步提交並推送至本 Skill 已設定的 GitHub `origin`；不得只更新本機版本或宣稱已部署而未確認遠端結果。發布或版本更新時讀取 [references/release-and-deployment.md](references/release-and-deployment.md)。

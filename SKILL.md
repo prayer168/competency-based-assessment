@@ -2,7 +2,7 @@
 name: competency-based-assessment-designer
 description: 依教材、年段、評量目的與十二年國教課綱，設計或審查素養導向評量、雙向細目表、學生卷、教師版與命題品質報告。適用於新命題、既有試卷健檢、題庫結構化與評量修訂；一般教學內容撰寫或只需解答單題時不使用。
 metadata:
-  version: "3.4.1"
+  version: "3.4.2"
   release-date: "2026-10-09"
 ---
 
@@ -64,6 +64,8 @@ COURSE SETUP (year/version → grade/term → multi-select units/activities/mate
 
 單選題（A1）與是非題（A3）不得配置圖片；必要資料改以文字或簡表呈現。A6 連連看必須同時有具作答功能的圖片與文字，使用簡潔、辨識明確的黑白線條圖、純白背景和留白連線區，不畫任何預設配對線；B8 看圖回答問題須以清楚的視覺材料為核心。所有評量配圖避免複雜背景、密集細節、大面積深色及只靠顏色判讀；圖中標籤、刻度與題目文字須深色、高對比，按最終列印尺寸檢查。簡單線稿優先使用原生繪圖或可編輯向量圖製作；圖表不得以生成式圖片臆造文字、座標或數據。需要以生成式 AI 製作圖片時，使用當下可用的 ChatGPT 生圖模型，不指定或寫死模型版本，並依上述黑白列印規格檢核。老師要求參照教材圖片時，先讀取對應單元活動，再重新繪製能呈現學習證據的簡單線稿，不直接複製教材圖。A7 勾選題逐項判斷正誤：大題標題使用「勾選題：對的打勾，錯的打叉」，每個敘述前提供窄括號及圈號，學生在括號內填 ✓／✗；選項逐項換行，題號、選項標記、懸掛縮排比照單選題。答案卷須逐項標出 ✓／✗，不得只列正確項目集合。
 
+B2 題型名稱使用「科普閱讀題」：文章約 300 字，適合學生年段並對應本次指定單元／活動；文章搭配有助理解且相互呼應的圖片、科學示意圖或四格漫畫，圖像須符合黑白列印要求。文章後依內容設計選擇題，每題原則上 2 分，使用圈號選項；答案與逐題配分須同步列入雙向細目表及統計分析表，並驗算全卷總分。
+
 建立藍圖、命題、干擾選項或評量圖像前，讀取 [references/blueprint-and-generation.md](references/blueprint-and-generation.md)。單選題的圈號、中文標點與選項排版依 [references/exam-layout-template.md](references/exam-layout-template.md)。
 
 每個大題／主要題型的紙本題號都必須各自從 1 起編，新增題型或大題時重新從 1 開始；內部題目 ID 仍保持唯一且穩定。答案卷、教師附錄與雙向細目表須用「大題識別＋該大題題號」交叉引用，不得因重編而失去題目對應。
@@ -88,6 +90,6 @@ COURSE SETUP (year/version → grade/term → multi-select units/activities/mate
 
 ## 版本管理
 
-目前 Skill 版本為 `3.4.1`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
+目前 Skill 版本為 `3.4.2`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
 
 每次版本號更新都必須在本機驗證通過後，同步提交並推送至本 Skill 已設定的 GitHub `origin`；不得只更新本機版本或宣稱已部署而未確認遠端結果。發布或版本更新時讀取 [references/release-and-deployment.md](references/release-and-deployment.md)。

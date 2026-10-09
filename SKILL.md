@@ -2,7 +2,7 @@
 name: competency-based-assessment-designer
 description: 依教材、年段、評量目的與十二年國教課綱，設計或審查素養導向評量、雙向細目表、學生卷、教師版與命題品質報告。適用於新命題、既有試卷健檢、題庫結構化與評量修訂；一般教學內容撰寫或只需解答單題時不使用。
 metadata:
-  version: "3.4.0"
+  version: "3.4.1"
   release-date: "2026-10-09"
 ---
 
@@ -62,7 +62,7 @@ COURSE SETUP (year/version → grade/term → multi-select units/activities/mate
 
 老師提供定期評量題目格式參考時，題幹編排、選項呈現、各題型大題標題及其作答說明依 [references/exam-layout-template.md](references/exam-layout-template.md) 對照附件樣式；只重用可泛化的格式證據，不複製樣本題目、答案或個資。正式評量除空白卷、答案卷、雙向細目表外，必須加交一份 `.xlsx` 出卷統計分析表，逐個獨立計分題目／小題列出大題識別與局部題號、主要題型、所屬單元、活動及配分，並彙總各題型、各活動和全卷分數；所有小計均須由逐題資料以公式計算，不得手動填入固定總分。依 [references/score-analysis-workbook.md](references/score-analysis-workbook.md) 建立後，重新開啟活頁簿核對公式結果與題號追溯，確認逐題加總、題型小計、活動小計皆等於當次設定總分（預設 100 分）、差額為 0 且配分範圍檢核全數通過，才可交付。
 
-單選題（A1）與是非題（A3）不得配置圖片；必要資料改以文字或簡表呈現。A6 連連看必須同時有具作答功能的圖片與文字，使用簡潔、辨識明確的黑白線條圖、純白背景和留白連線區，不畫任何預設配對線；B8 看圖回答問題須以清楚的視覺材料為核心。所有評量配圖避免複雜背景、密集細節、大面積深色及只靠顏色判讀；圖中標籤、刻度與題目文字須深色、高對比，按最終列印尺寸檢查。簡單線稿優先使用原生繪圖或可編輯向量圖製作；圖表不得以生成式圖片臆造文字、座標或數據。需要以生成式 AI 製作圖片時，使用當下可用的 ChatGPT 生圖模型，不指定或寫死模型版本，並依上述黑白列印規格檢核。老師要求參照教材圖片時，先讀取對應單元活動，再重新繪製能呈現學習證據的簡單線稿，不直接複製教材圖。A7 勾選題以清楚方框和文字項目作答，不因勾選符號而加入裝飾圖片。
+單選題（A1）與是非題（A3）不得配置圖片；必要資料改以文字或簡表呈現。A6 連連看必須同時有具作答功能的圖片與文字，使用簡潔、辨識明確的黑白線條圖、純白背景和留白連線區，不畫任何預設配對線；B8 看圖回答問題須以清楚的視覺材料為核心。所有評量配圖避免複雜背景、密集細節、大面積深色及只靠顏色判讀；圖中標籤、刻度與題目文字須深色、高對比，按最終列印尺寸檢查。簡單線稿優先使用原生繪圖或可編輯向量圖製作；圖表不得以生成式圖片臆造文字、座標或數據。需要以生成式 AI 製作圖片時，使用當下可用的 ChatGPT 生圖模型，不指定或寫死模型版本，並依上述黑白列印規格檢核。老師要求參照教材圖片時，先讀取對應單元活動，再重新繪製能呈現學習證據的簡單線稿，不直接複製教材圖。A7 勾選題逐項判斷正誤：大題標題使用「勾選題：對的打勾，錯的打叉」，每個敘述前提供窄括號及圈號，學生在括號內填 ✓／✗；選項逐項換行，題號、選項標記、懸掛縮排比照單選題。答案卷須逐項標出 ✓／✗，不得只列正確項目集合。
 
 建立藍圖、命題、干擾選項或評量圖像前，讀取 [references/blueprint-and-generation.md](references/blueprint-and-generation.md)。單選題的圈號、中文標點與選項排版依 [references/exam-layout-template.md](references/exam-layout-template.md)。
 
@@ -88,6 +88,6 @@ COURSE SETUP (year/version → grade/term → multi-select units/activities/mate
 
 ## 版本管理
 
-目前 Skill 版本為 `3.4.0`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
+目前 Skill 版本為 `3.4.1`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
 
 每次版本號更新都必須在本機驗證通過後，同步提交並推送至本 Skill 已設定的 GitHub `origin`；不得只更新本機版本或宣稱已部署而未確認遠端結果。發布或版本更新時讀取 [references/release-and-deployment.md](references/release-and-deployment.md)。

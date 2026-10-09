@@ -2,7 +2,7 @@
 name: competency-based-assessment-designer
 description: 依教材、年段、評量目的與十二年國教課綱，設計或審查素養導向評量、雙向細目表、學生卷、教師版與命題品質報告。適用於新命題、既有試卷健檢、題庫結構化與評量修訂；一般教學內容撰寫或只需解答單題時不使用。
 metadata:
-  version: "3.3.7"
+  version: "3.3.8"
   release-date: "2026-10-09"
 ---
 
@@ -88,6 +88,6 @@ COURSE SETUP (year/version → grade/term → multi-select units/activities/mate
 
 ## 版本管理
 
-目前 Skill 版本為 `3.3.7`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
+目前 Skill 版本為 `3.3.8`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
 
 每次版本號更新都必須在本機驗證通過後，同步提交並推送至本 Skill 已設定的 GitHub `origin`；不得只更新本機版本或宣稱已部署而未確認遠端結果。發布或版本更新時讀取 [references/release-and-deployment.md](references/release-and-deployment.md)。

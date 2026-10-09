@@ -2,7 +2,7 @@
 name: competency-based-assessment-designer
 description: 依教材、年段、評量目的與十二年國教課綱，設計或審查素養導向評量、雙向細目表、學生卷、教師版與命題品質報告。適用於新命題、既有試卷健檢、題庫結構化與評量修訂；一般教學內容撰寫或只需解答單題時不使用。
 metadata:
-  version: "3.3.0"
+  version: "3.3.1"
   release-date: "2026-10-09"
 ---
 
@@ -60,7 +60,7 @@ COURSE SETUP (year/version → grade/term → multi-select units/activities/mate
 
 教師指定每個獨立計分小題的配分範圍時，嚴格遵守最低分與最高分；若同時寫出較低的「最多」和較高的「不得超過」上限，以較低上限為準。以整數配分時小題不得低於 1 分；不得為了維持題數或活動等分而突破老師指定上限。需要時增加有效且彼此不重複的計分小題，重算題數、活動配分與版面負荷；若無法兼顧題目品質、範圍涵蓋、總分和可讀版面，明確列出衝突並請老師調整。
 
-老師提供定期評量題目格式參考時，題幹編排、選項呈現、各題型大題標題及其作答說明依 [references/exam-layout-template.md](references/exam-layout-template.md) 對照附件樣式；只重用可泛化的格式證據，不複製樣本題目、答案或個資。正式評量除空白卷、答案卷、雙向細目表外，必須加交一份 `.xlsx` 出卷統計分析表，逐個獨立計分題目／小題列出大題與局部題號、主要題型、單元、活動及配分，並彙總各題型與各活動分數；依 [references/score-analysis-workbook.md](references/score-analysis-workbook.md) 建立、公式核算並自行驗證總分符合當次設定（預設 100 分）。
+老師提供定期評量題目格式參考時，題幹編排、選項呈現、各題型大題標題及其作答說明依 [references/exam-layout-template.md](references/exam-layout-template.md) 對照附件樣式；只重用可泛化的格式證據，不複製樣本題目、答案或個資。正式評量除空白卷、答案卷、雙向細目表外，必須加交一份 `.xlsx` 出卷統計分析表，逐個獨立計分題目／小題列出大題識別與局部題號、主要題型、所屬單元、活動及配分，並彙總各題型、各活動和全卷分數；所有小計均須由逐題資料以公式計算，不得手動填入固定總分。依 [references/score-analysis-workbook.md](references/score-analysis-workbook.md) 建立後，重新開啟活頁簿核對公式結果與題號追溯，確認逐題加總、題型小計、活動小計皆等於當次設定總分（預設 100 分）、差額為 0 且配分範圍檢核全數通過，才可交付。
 
 單選題（A1）與是非題（A3）不得配置插圖、照片、示意圖、圖像選項或裝飾圖；必要資料改以文字或簡表呈現。A6 連連看及 B8 看圖回答問題須以清楚的視覺作答材料為核心；閱讀題、情境題及其他確實需要視覺證據的題型，才可適量生成符合題意的圖片。需要以生成式 AI 製作試卷圖片時，使用 ChatGPT 的生圖模型，不指定或寫死模型版本，並以當下可用的 ChatGPT 生圖模型生成；圖片必須符合題目內容、具有作答功能、不得洩漏答案，且須通過內容與版面／列印可讀性檢核。A7 勾選題以清楚方框和文字項目作答，不因勾選符號而加入裝飾圖片。
 
@@ -88,6 +88,6 @@ COURSE SETUP (year/version → grade/term → multi-select units/activities/mate
 
 ## 版本管理
 
-目前 Skill 版本為 `3.3.0`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
+目前 Skill 版本為 `3.3.1`，採 Semantic Versioning：不相容的規格變更升 Major、新增向下相容功能升 Minor、修正或文字規則補強升 Patch。日後修改 Skill 內容時，同步更新 frontmatter 的 `metadata.version`，再執行驗證；`metadata.release-date` 記錄該版本定版日期。
 
 每次版本號更新都必須在本機驗證通過後，同步提交並推送至本 Skill 已設定的 GitHub `origin`；不得只更新本機版本或宣稱已部署而未確認遠端結果。發布或版本更新時讀取 [references/release-and-deployment.md](references/release-and-deployment.md)。

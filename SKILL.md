@@ -2,7 +2,7 @@
 name: competency-based-assessment-designer
 description: 依教材、年段、評量目的與十二年國教課綱，設計或審查素養導向評量、雙向細目表、學生卷、教師版與命題品質報告。適用於新命題、既有試卷健檢、題庫結構化與評量修訂；一般教學內容撰寫或只需解答單題時不使用。
 metadata:
-  version: "3.8.1"
+  version: "3.8.2"
   release-date: "2026-10-10"
 ---
 
@@ -44,7 +44,7 @@ AUTO-SHOW INTAKE FORM (known details prefilled; year/version/grade/term/units/ac
 
 完整的輸入、教材邊界、預設值、教材分析與 115 學年度課程地圖使用規則見 [references/intake-and-analysis.md](references/intake-and-analysis.md)。開始新評量、收到教材、圖片或既有試卷時讀取該文件。若老師要求納入課本、習作、重點複習或隨堂演練，另讀取 [references/source-material-integration.md](references/source-material-integration.md)。
 
-定期評量命題與紙本版面須遵循 [references/periodic-assessment-rules.md](references/periodic-assessment-rules.md)；正式版雙向細目表須依 [references/blueprint-template.md](references/blueprint-template.md) 同時輸出教材比例分佈表、認知層次矩陣與逐題追溯表。附件提供的校名、題目或示例值只作格式素材，不得當成當次試卷資料。老師提供題目格式參考時，依 [references/exam-layout-template.md](references/exam-layout-template.md) 擷取題幹、選項、題型大題標題與作答說明的版面慣例；不得沿用其中題目內容。
+定期評量命題與紙本版面須遵循 [references/periodic-assessment-rules.md](references/periodic-assessment-rules.md)；正式版雙向細目表須依 [references/blueprint-template.md](references/blueprint-template.md) 同時輸出教材比例分佈表、認知層次矩陣與逐題追溯表；另需附「雙向細目表簡易版」，並依檢核表逐項核對。教師提供簡易版範本時，沿用範本頁面、表格、欄位、合併儲存格與版式填寫，不重設格式；簡易版包含基本資料、教材比例分佈、認知層次配分及檢核表。新增規範見 [references/blueprint-template.md](references/blueprint-template.md)。附件提供的校名、題目或示例值只作格式素材，不得當成當次試卷資料。老師提供題目格式參考時，依 [references/exam-layout-template.md](references/exam-layout-template.md) 擷取題幹、選項、題型大題標題與作答說明的版面慣例；不得沿用其中題目內容。
 
 老師提供試卷輸出參考包（尤其同時包含題目卷、空白作答卡及教師詳解的 ZIP）時，逐一盤點並依 [references/archive-output-style-reference.md](references/archive-output-style-reference.md) 分析各檔案的版面、圖文、配分和用途。參考包只能提供可重用的呈現模式，不取代當次明確規格、教材邊界、總分核算及既有題型圖像限制；不得直接複製原題、答案、個資或圖檔至公開 Skill／GitHub。
 

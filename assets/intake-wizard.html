@@ -1,0 +1,145 @@
+<div id="assessment-intake">
+  <h2>評量設定</h2>
+  <p data-progress aria-live="polite"></p>
+  <form novalidate>
+    <section data-step="0">
+      <h3>選擇題型</h3>
+      <div data-types></div>
+      <label class="form-label">其他題型名稱<input class="form-control" name="customType"></label>
+      <label class="form-check"><input class="form-check-input" type="checkbox" name="autoTypes"><span class="form-check-label">由 AI 配置題型（已勾選項目視為必含）</span></label>
+    </section>
+    <section data-step="1" hidden>
+      <h3>各題型的題數</h3>
+      <label class="form-label">配置方式<select class="form-select" name="countMode"><option value="manual">逐類填選題數</option><option value="auto">AI 自動分配題數</option></select></label>
+      <div data-counts></div><p data-total aria-live="polite"></p>
+    </section>
+    <section data-step="2" hidden>
+      <h3>配分與命題方向</h3>
+      <div class="viz-controls">
+        <label class="form-label">總分<input class="form-control" name="totalScore" type="number" min="1" step="1" value="100"></label>
+        <label class="form-label">作答時間（分鐘）<input class="form-control" name="minutes" type="number" min="1" step="1" value="40"></label>
+        <label class="form-label">每小題最低分<input class="form-control" name="minScore" type="number" min="1" step="1" value="1"></label>
+        <label class="form-label">每小題最高分<input class="form-control" name="maxScore" type="number" min="1" step="1" value="4"></label>
+      </div>
+      <label class="form-label">單元／活動配分<select class="form-select" name="allocation"><option>AI 依學習重點配置</option><option>單元平均</option><option>活動平均</option><option>其他／自訂（填在特別要求）</option></select></label>
+      <label class="form-label">難度<select class="form-select" name="difficulty"><option>易30% 中50% 難20%</option><option>基礎複習為主</option><option>進階挑戰為主</option><option>其他／自訂（填在特別要求）</option></select></label>
+      <label class="form-label">教材邊界<select class="form-select" name="boundary"><option>素養應用</option><option>嚴格教材</option><option>教材延伸</option><option>跨領域</option><option>AI 自動判斷</option><option>其他／自訂（填在特別要求）</option></select></label>
+      <label class="form-label">素養濃度<select class="form-select" name="competency"><option>均衡型</option><option>基礎型</option><option>素養型</option><option>探究型</option><option>其他／自訂（填在特別要求）</option></select></label>
+      <label class="form-label">命題方式<select class="form-select" name="generation"><option>新出題目，AI 擬定大綱</option><option>依教師大綱新出題目</option><option>修訂既有題目</option><option>新出與修訂混合</option><option>其他／自訂（填在特別要求）</option></select></label>
+    </section>
+    <section data-step="3" hidden>
+      <h3>範圍與交付</h3>
+      <div class="viz-controls" data-basic></div>
+      <label class="form-label">單元與活動（可複選）</label><div data-units></div>
+      <label class="form-label">其他／自訂單元或活動<input class="form-control" name="customScope"></label>
+      <label class="form-label">教材來源、既有題目或教師大綱<textarea class="form-control" name="materials" rows="2" placeholder="可填教材路徑、網址或已提供的附件名稱；未提供的附件不視為已讀"></textarea></label>
+      <label class="form-label">排除範圍<input class="form-control" name="excluded"></label>
+      <label class="form-label">圖片來源<select class="form-select" name="imageSource"><option>依已選題型自動判斷</option><option>教師提供圖片</option><option>重新繪製或生成圖片</option><option>不需要圖片</option><option>其他／自訂（填在特別要求）</option></select></label>
+      <label class="form-label">圖片工具<select class="form-select" name="imageTool"></select></label>
+      <label class="form-label">圖片風格與人物<input class="form-control" name="imageStyle" value="黑白列印、白底高對比；人物依技能規範"></label>
+      <label class="form-label">圖表資料來源與標示<input class="form-control" name="chartSource" value="依教材或可查證資料；自編資料標明教學模擬"></label>
+      <label class="form-label">輸出根目錄（完整路徑，必填）<input class="form-control" name="outputRoot" required></label>
+      <label class="form-label">版面與格式<input class="form-control" name="layout" value="DOCX；學生卷與答案卷各 A3 直式雙欄正反兩頁"></label>
+      <p>必交：學生空白卷、答案卷、詳細與簡易雙向細目表、統計分析 XLSX。</p>
+      <label class="form-label">選配成果／參考版型<input class="form-control" name="extras"></label>
+      <label class="form-label">特別要求<textarea class="form-control" name="notes" rows="3"></textarea></label>
+    </section>
+    <section data-step="4" hidden><h3>檢視全部設定</h3><div data-summary></div></section>
+    <p data-error class="text-destructive" role="alert"></p>
+    <p data-status role="status"></p>
+    <div class="viz-row">
+      <button type="button" class="btn" data-back>上一步</button>
+      <button type="button" class="btn btn-primary" data-next>下一步</button>
+      <button type="submit" class="btn btn-primary" data-submit hidden>送出全部設定並開始製作</button>
+    </div>
+  </form>
+</div>
+<style>
+  #assessment-intake [hidden]{display:none!important}
+  #assessment-intake label.form-label{display:block;margin-block:12px}
+  #assessment-intake [data-types] .viz-grid{margin-block:8px 16px}
+  #assessment-intake [data-summary] dd{margin-inline-start:0;overflow-wrap:anywhere;margin-block-end:12px}
+  #assessment-intake input,#assessment-intake select,#assessment-intake textarea{max-width:100%;box-sizing:border-box}
+</style>
+<script>
+(() => {
+  // Adapt only this config for the current task. Never invent available image tools.
+  const config = {
+    prefill: {}, // title, subject, publisher, year, term, grade, purpose, school, outputRoot
+    units: [], // verified names: [{name:'...', selected:true}]
+    imageTools: [], // actual tools available in the current session, no fixed model versions
+    selectedTypes: [],
+    counts: {}
+  };
+  const root=document.getElementById('assessment-intake'), form=root.querySelector('form');
+  const one=s=>root.querySelector(s), all=s=>[...root.querySelectorAll(s)];
+  const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
+  const groups=[['客觀題',[['A1','單選題'],['A3','是非題'],['A4','配合題'],['A5','填充題'],['A6','連連看'],['A7','勾選題']]],['素養應用題',[['B1','情境題'],['B2','科普閱讀題'],['B3','圖表判讀題'],['B4','資料分析題'],['B5','生活應用題'],['B6','跨領域題'],['B7','問題解決題'],['B8','看圖回答問題']]],['高層次題',[['C1','推論題'],['C2','解釋題'],['C3','論證題'],['C4','開放題'],['C5','實驗設計題'],['C6','錯誤分析題'],['C7','證據判斷題'],['C8','創造設計題']]]];
+  const names=Object.fromEntries(groups.flatMap(g=>g[1]));
+  let step=0, busy=false, submitted=false, countCache={...config.counts};
+  for(const [heading,types] of groups){one('[data-types]').append(el('h3',heading));const grid=el('div',undefined,'viz-grid');
+    for(const [code,name] of types){const label=el('label',undefined,'form-check'),input=el('input');input.type='checkbox';input.value=code;input.dataset.type=code;input.className='form-check-input';input.checked=config.selectedTypes.includes(code);label.append(input,el('span',name,'form-check-label'));grid.append(label);}one('[data-types]').append(grid);
+  }
+  const fields=[['title','評量名稱'],['subject','領域'],['publisher','教材版本'],['year','學年度'],['term','學期'],['grade','年級'],['purpose','評量用途'],['school','學校／班級（選填）']];
+  for(const [name,labelText] of fields){const label=el('label',labelText,'form-label'),input=el('input');input.name=name;input.className='form-control';input.value=config.prefill[name]||'';label.append(input);one('[data-basic]').append(label);}
+  const get=name=>form.elements.namedItem(name).value.trim();
+  const set=(name,value)=>{const node=form.elements.namedItem(name);if(node)node.value=value;};
+  set('outputRoot',config.prefill.outputRoot||'');
+  for(const item of config.units){const label=el('label',undefined,'form-check'),input=el('input');input.type='checkbox';input.className='form-check-input';input.dataset.unit='';input.value=item.name;input.checked=!!item.selected;label.append(input,el('span',item.name,'form-check-label'));one('[data-units]').append(label);}
+  for(const tool of ['自動選擇最適工具',...config.imageTools,'其他／自訂（需另確認可用性）']){const option=el('option',tool);one('[name=imageTool]').append(option);}
+  const selected=()=>{const list=all('[data-type]:checked').map(n=>({code:n.value,name:names[n.value]}));if(get('customType'))list.push({code:'CUSTOM',name:get('customType')});return list;};
+  const captureCounts=()=>all('[data-count]').forEach(n=>countCache[n.dataset.count]=n.value);
+  function renderCounts(){captureCounts();const target=one('[data-counts]');target.replaceChildren();const auto=get('countMode')==='auto';
+    for(const type of selected()){const label=el('label',type.name+' 題數','form-label'),input=el('input');input.type='number';input.min='0';input.step='1';input.className='form-control';input.dataset.count=type.code;input.value=countCache[type.code]??'';input.disabled=auto;label.append(input);target.append(label);}updateTotal();
+  }
+  function updateTotal(){captureCounts();const list=selected(),valid=list.length&&list.every(t=>/^\d+$/.test(String(countCache[t.code]??'')));one('[data-total]').textContent=get('countMode')==='auto'?'總題數：送出後由 AI 配置':valid?'總題數：'+list.reduce((n,t)=>n+Number(countCache[t.code]),0):'請為各題型填選非負整數題數';}
+  function payload(){captureCounts();const basic=Object.fromEntries(fields.map(([key])=>[key,get(key)]));const types=selected().map(t=>({...t,count:get('countMode')==='auto'?null:Number(countCache[t.code])})).filter(t=>t.count===null||t.count>0);
+    return {schemaVersion:1,status:'submitted',basic,scope:{units:all('[data-unit]:checked').map(n=>n.value),custom:get('customScope'),materials:get('materials'),excluded:get('excluded')},types,autoTypes:form.elements.autoTypes.checked,countMode:get('countMode'),scoring:{total:Number(get('totalScore')),minutes:Number(get('minutes')),min:Number(get('minScore')),max:Number(get('maxScore')),allocation:get('allocation')},direction:{difficulty:get('difficulty'),boundary:get('boundary'),competency:get('competency'),generation:get('generation')},images:{source:get('imageSource'),tool:get('imageTool'),style:get('imageStyle'),chartSource:get('chartSource')},delivery:{outputRoot:get('outputRoot'),layout:get('layout'),required:['學生空白卷 DOCX','答案卷 DOCX','詳細與簡易雙向細目表 DOCX','統計分析 XLSX'],extras:get('extras')},notes:get('notes')};
+  }
+  function validate(index){captureCounts();const types=selected(),autoTypes=form.elements.autoTypes.checked;
+    if(index===0&&!types.length&&!autoTypes)return '請至少選一種題型，或勾選 AI 配置題型。';
+    if(index===1&&get('countMode')==='manual'){
+      if(!types.length)return '未選指定題型時，請選 AI 自動分配題數。';
+      if(types.some(t=>!/^\d+$/.test(String(countCache[t.code]??''))))return '各題數必須填入非負整數。';
+      if(!types.some(t=>Number(countCache[t.code])>0))return '請至少保留一種題型的正題數。';
+    }
+    if(index===2){const nums=['totalScore','minutes','minScore','maxScore'].map(n=>get(n));if(nums.some(v=>!/^\d+$/.test(v)||Number(v)<1))return '總分、時間及配分上下限須為正整數。';
+      const [total,,min,max]=nums.map(Number);if(min>max)return '最低分不可高於最高分。';
+      if(get('countMode')==='manual'){const count=types.reduce((n,t)=>n+Number(countCache[t.code]),0);if(count*min>total||count*max<total)return '依目前題數與每題配分上下限，無法達到總分；請調整題數或配分。';}
+    }
+    if(index===3){if(fields.filter(([n])=>n!=='school').some(([n])=>!get(n)))return '請填完評量名稱、領域、版本、學年度、學期、年級及用途。';
+      if(!all('[data-unit]:checked').length&&!get('customScope'))return '請選擇或自訂單元／活動。';
+      if(!/^(?:[A-Za-z]:[\\/]|\/|\\\\)/.test(get('outputRoot')))return '請填入輸出根目錄的完整絕對路徑。';
+    }return '';
+  }
+  function summary(){const v=payload(),target=one('[data-summary]');target.replaceChildren();const rows=[
+    ['基本資料',fields.map(([key,label])=>label+'：'+(v.basic[key]||'未填')).join('；')],
+    ['範圍',[...v.scope.units,v.scope.custom].filter(Boolean).join('、')],
+    ['題型與題數',v.types.map(t=>t.name+'：'+(t.count===null?'AI 配置':t.count+'題')).join('；')||'AI 配置題型與題數'],
+    ['總題數',v.countMode==='auto'?'待 AI 配置':String(v.types.reduce((n,t)=>n+t.count,0))],
+    ['總分與時間',v.scoring.total+'分；'+v.scoring.minutes+'分鐘；每小題'+v.scoring.min+'至'+v.scoring.max+'分'],
+    ['配置方式',v.scoring.allocation+'；題數'+(v.countMode==='auto'?'AI 配置':'依上列填寫')+'；題型'+(v.autoTypes?'AI 配置（保留已選題型）':'依勾選')],
+    ['命題方向',Object.values(v.direction).join('；')],['教材來源',v.scope.materials||'尚未提供'],['排除範圍',v.scope.excluded||'無'],
+    ['圖片與圖表',Object.values(v.images).join('；')],['輸出根目錄',v.delivery.outputRoot],['版面',v.delivery.layout],
+    ['交付',v.delivery.required.join('、')],['選配成果',v.delivery.extras||'無'],['特別要求',v.notes||'無']];
+    const dl=el('dl');for(const [name,data] of rows)dl.append(el('dt',name),el('dd',data));target.append(dl);}
+  function show(){all('[data-step]').forEach(n=>n.hidden=Number(n.dataset.step)!==step);one('[data-progress]').textContent=`第 ${step+1} 步，共 5 步`;one('[data-back]').disabled=step===0||busy;one('[data-next]').hidden=step===4;one('[data-submit]').hidden=step!==4;one('[data-error]').textContent='';if(step===1)renderCounts();if(step===4)summary();}
+  function save(){if(typeof window.openai?.setWidgetState!=='function')return;const values={};for(const node of form.elements){if(node.name)values[node.name]=node.type==='checkbox'?node.checked:node.value;}
+    Promise.resolve(window.openai.setWidgetState({modelContent:null,privateContent:{step,values,checked:all('[data-type]:checked').map(n=>n.value),units:all('[data-unit]:checked').map(n=>n.value),counts:countCache}})).catch(()=>{});
+  }
+  function restore(saved){if(!saved)return;if(saved.values)for(const [key,value] of Object.entries(saved.values)){const node=form.elements.namedItem(key);if(node){if(node.type==='checkbox')node.checked=!!value;else node.value=value;}}if(saved.checked)all('[data-type]').forEach(n=>n.checked=saved.checked.includes(n.value));if(saved.units)all('[data-unit]').forEach(n=>n.checked=saved.units.includes(n.value));one('[data-counts]').replaceChildren();countCache={...countCache,...saved.counts};step=Math.max(0,Math.min(4,Number(saved.step)||0));renderCounts();show();}
+  form.addEventListener('input',()=>{captureCounts();updateTotal();save();});
+  form.addEventListener('change',e=>{if(e.target.name==='countMode')renderCounts();save();});
+  one('[data-next]').addEventListener('click',()=>{const error=validate(step);if(error){one('[data-error]').textContent=error;return;}step++;show();save();});
+  one('[data-back]').addEventListener('click',()=>{if(step>0){step--;show();save();}});
+  form.addEventListener('submit',async event=>{event.preventDefault();if(busy||submitted)return;for(let i=0;i<4;i++){const error=validate(i);if(error){step=i;show();one('[data-error]').textContent=error;return;}}
+    if(typeof window.openai?.sendFollowUpMessage!=='function'){one('[data-error]').textContent='目前介面不支援將設定送回對話；設定已保留，尚未開始命題。';return;}
+    busy=true;one('[data-submit]').disabled=true;one('[data-back]').disabled=true;one('[data-error]').textContent='';one('[data-status]').textContent='正在送出設定，請完成主機可能顯示的確認。';
+    try{await window.openai.sendFollowUpMessage({title:'送出評量設定',prompt:'請依下列完整評量設定製作。先驗證設定並摘要，收到有效設定後才開始分析與命題。\n'+JSON.stringify(payload())});submitted=true;one('[data-status]').textContent='已呼叫送出；以對話收到完整設定為準。';}
+    catch(error){one('[data-error]').textContent='送出未完成，可保留設定後重試。';one('[data-status]').textContent='';}
+    finally{busy=false;one('[data-submit]').disabled=submitted;one('[data-back]').disabled=submitted;}
+  });
+  window.addEventListener('openai:set_globals',event=>{if(!busy&&!submitted)restore(event.detail?.globals?.widgetState?.privateContent);});
+  renderCounts();restore(window.openai?.widgetState?.privateContent);show();
+})();
+</script>
